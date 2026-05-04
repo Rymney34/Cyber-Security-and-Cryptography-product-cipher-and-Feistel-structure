@@ -12,7 +12,7 @@ parameters = {"shift": 3, 'v_key': "KEYS", "rails": 3}
 roundKeys = [parameters] * 16
 print("---Encryption and Decryption Output ---")
 encrypted = feistelEncrypt16Rounds(sampleMessage, roundKeys)
-# to prevent unprintable chars utf used
+# to prevent unprintable chars utf used hex() can be used to see readable string of characters
 print(f"Encrypted: {encrypted.encode('utf-8')}")
 
 decrypted = feistelDecrypt16Rounds(encrypted, roundKeys)
