@@ -3,8 +3,9 @@ from ciphers import *
 
 def productEncrypt(plaintext, caeserShift, vigenereKey, railDepth):
     encryption1 = caesarEncrypt(plaintext, caeserShift)
+
     encryption2 = vigenereEncrypt(encryption1, vigenereKey)
-    # print("Product",encryptRailFence(encryption2, railDepth))
+
     return encryptRailFence(encryption2, railDepth)
 
 def feistelEncrypt16Rounds(dataBlock, roundKeys):

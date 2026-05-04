@@ -9,6 +9,7 @@ def caesarEncrypt(text, shift):
                 result += chr((ord(char) + shift-65) % 26 + 65)
             else:
                 result += chr((ord(char) + shift-97) % 26 + 97)
+        # print(result)
         return result
 
 def caesarDecrypt(text, shift):
@@ -21,14 +22,9 @@ def caesarDecrypt(text, shift):
             result += chr((ord(char) - shift-65) % 26 + 65)
         else:
             result += chr((ord(char) - shift-97) % 26 + 97)
+    # print(result)
     return result
 
-# text = "EXXEGOEXSRGI"
-# s = 4
-# print ("Text  : " + text)
-# print ("Shift : " + str(s))
-# # print ("CipherEncrypt: " + caesarEncrypt(text,s))
-# print ("Cipher: " + caesarDecrypt(text,s))
 
 def vigenereEncrypt(text, key):
     result = ""
@@ -49,14 +45,13 @@ def vigenereEncrypt(text, key):
             keyIndex += 1
         else:
             result += char
-
+    # print(result)
     return result
 
 def vigenereDecrypt(cipherText, key):
     result = ""
     key = key.upper()
     keyIndex = 0
-
 
     for char in cipherText:
         #  is alpha checks each char if it letter
@@ -72,17 +67,7 @@ def vigenereDecrypt(cipherText, key):
             keyIndex =+ 1
         else:
             result += char
-
     return result
-
-# text = "HELLO WORLD"
-# key = "KEY"
-#
-# encrypted = vigenereEncrypt(text, key)
-# print(encrypted)
-#
-# decrypted = vigenereDecrypt(encrypted, key)
-# print(decrypted)
 
 def encryptRailFence(text, key):
     rail =[['\n' for i in range(len(text))]
