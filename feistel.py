@@ -28,7 +28,7 @@ def feistelEncrypt16Rounds(dataBlock, roundKeys):
             keys['v_key'],
             keys['rails']
         )
-
+# XOR with the left
         newR = [chr(ord(a) ^ ord(b)) for a, b in zip(lHalf, funcOutput)]
 
         lHalf = newL
